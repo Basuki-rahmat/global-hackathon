@@ -36,7 +36,7 @@
 
 ---
 
-
+<img width="1000" height="1000" alt="diagram" src="https://github.com/Basuki-rahmat/global-hackathon/blob/main/diagram/diagram.png" />
 
 ## 🏗 Arsitektur Sistem
 
