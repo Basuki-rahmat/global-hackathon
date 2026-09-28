@@ -1,6 +1,7 @@
 # OmniStaff AI (UMKM Autonomous Virtual Workforce)
 
 > Solusi pekerja virtual berbasis AI multi-agent dengan visualisasi 3D Virtual Office interaktif untuk membantu operasional harian UMKM. Dibangun untuk mengikuti ajang **Meta Global AI Developer Hackathon**.
+> <img width="1312" height="1199" alt="OmniStaff-AI" src="https://github.com/Basuki-rahmat/global-hackathon/blob/main/OmniStaff-AI.png" />
 
 ---
 
@@ -18,6 +19,7 @@
 
 ---
 
+
 ## 🚀 Tentang Proyek
 
 **OmniStaff AI** adalah platform pekerja virtual mandiri (*autonomous AI employees*) yang dirancang khusus untuk UMKM. Proyek ini memadukan model AI mutakhir dari Meta dengan dashboard kantor virtual 3D interaktif. Sistem ini bertindak sebagai staf layanan pelanggan (*Customer Service*), manajer inventaris, hingga analis keuangan yang siap bekerja 24/7 melalui perintah teks maupun suara.
@@ -33,7 +35,7 @@
 * **Pencatatan Keuangan Kilat:** Rekapitulasi laporan penjualan dan laba-rugi otomatis setiap hari.
 
 ---
-<img width="1312" height="1199" alt="OmniStaff-AI" src="https://github.com/Basuki-rahmat/global-hackathon/blob/main/OmniStaff-AI.png" />
+
 
 
 ## 🏗 Arsitektur Sistem
