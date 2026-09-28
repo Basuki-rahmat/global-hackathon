@@ -33,7 +33,7 @@
 * **Pencatatan Keuangan Kilat:** Rekapitulasi laporan penjualan dan laba-rugi otomatis setiap hari.
 
 ---
-!upload<img width="1312" height="1199" alt="OmniStaff-AI" src="https://github.com/Basuki-rahmat/global-hackathon/blob/main/OmniStaff-AI.png" />
+<img width="1312" height="1199" alt="OmniStaff-AI" src="https://github.com/Basuki-rahmat/global-hackathon/blob/main/OmniStaff-AI.png" />
 
 
 ## 🏗 Arsitektur Sistem
