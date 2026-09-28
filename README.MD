@@ -23,7 +23,7 @@
 **OmniStaff AI** adalah platform pekerja virtual mandiri (*autonomous AI employees*) yang dirancang khusus untuk UMKM. Proyek ini memadukan model AI mutakhir dari Meta dengan dashboard kantor virtual 3D interaktif. Sistem ini bertindak sebagai staf layanan pelanggan (*Customer Service*), manajer inventaris, hingga analis keuangan yang siap bekerja 24/7 melalui perintah teks maupun suara.
 
 ---
-
+https://github.com/Basuki-rahmat/global-hackathon/blob/main/OmniStaff-AI.png
 ## ✨ Fitur Utama
 
 * **3D Virtual Office Dashboard:** Antarmuka web interaktif di mana avatar staf AI merepresentasikan status kerja nyata.  
