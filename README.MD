@@ -1,36 +1,48 @@
-AI Employee UMKM - Hackathon Plan & Implementation Guide
-1. Konsep dan Nama Produk
-●	Nama Produk: OmniStaff AI (UMKM Autonomous Virtual Workforce)
-●	Konsep Utama: Platform pekerja virtual berbasis AI multi-agent yang divisualisasikan dalam bentuk 3D Virtual Office interaktif. Setiap agen AI bertindak sebagai karyawan virtual (seperti Customer Service, Inventory Manager, dan Financial Analyst) yang siap membantu operasional harian UMKM secara mandiri, didukung oleh integrasi text-chat, voice command, dan image generation untuk katalog produk.
+# OmniStaff AI (UMKM Autonomous Virtual Workforce)
 
-________________________________________
-2. Masalah yang Diselesaikan
-●	Keterbatasan Sumber Daya: Banyak UMKM tidak memiliki anggaran untuk merekrut staf khusus administrasi, layanan pelanggan (CS), dan pencatatan keuangan secara bersamaan.
-●	Respon Pelanggan Lambat: Seringkali chat dari pembeli potensial di luar jam operasional terabaikan karena pemilik toko kelelahan atau sibuk mengurus produksi.
-●	Manajemen Stok dan Laporan Manual: Pencatatan stok barang dan laporan keuangan harian sering kali berantakan atau terlambat direkap, memicu potensi salah hitung rugi-laba.
+> Solusi pekerja virtual berbasis AI multi-agent dengan visualisasi 3D Virtual Office interaktif untuk membantu operasional harian UMKM. Dibangun untuk mengikuti ajang **Meta Global AI Developer Hackathon**.
 
-________________________________________
-3. Fitur MVP (Minimum Viable Product)
-●	3D Virtual Office Dashboard: Antarmuka visual kantor interaktif berbasis web di mana avatar staf AI bergerak atau merespon sesuai status kerja.
-●	AI Customer Service Agent: Chatbot interaktif untuk menjawab pertanyaan seputar produk, stok, dan status pesanan pelanggan secara otomatis 24/7.
-●	Modul Manajemen Produk & Stok: Sinkronisasi inventaris otomatis yang bisa diperintah melalui teks atau suara.
-●	Modul Laporan Keuangan Kilat: Pembuatan laporan laba-rugi otomatis berdasarkan transaksi harian yang masuk.
+---
 
-________________________________________
-4. Fitur AI
-●	Meta AI Integration: Menggunakan model AI mutakhir dari Meta via API untuk penalaran agen, pemrosesan bahasa alami (NLP), dan pemahaman konteks bisnis lokal.
-●	Voice-Activated Commands: Memungkinkan pemilik UMKM memberikan instruksi operasional (seperti "Cek stok kain batik hari ini") lewat suara (Speech-to-Text & Text-to-Speech).
-●	AI Image Generator: Otomatis menghasilkan aset visual atau poster promosi produk baru berdasarkan deskripsi teks sederhana.
+## 📌 Daftar Isi
 
-________________________________________
-5. Arsitektur Sistem (Meta AI + Node.js + Express + MySQL)
+1. [Tentang Proyek](#-tentang-proyek)  
+2. [Fitur Utama](#-fitur-utama)  
+3. [Arsitektur Sistem](#-arsitektur-sistem)  
+4. [Struktur Folder Lengkap](#-struktur-folder-lengkap)  
+5. [Prasyarat Sistem](#-prasyarat-sistem)  
+6. [Panduan Instalasi dengan Laragon (Lokal)](#-panduan-instalasi-dengan-laragon-lokal)  
+7. [Konfigurasi Environment (`.env`)](#-konfigurasi-environment-env)  
+8. [Menjalankan Aplikasi](#-menjalankan-aplikasi)  
+9. [Dokumentasi & Penggunaan](#-dokumentasi--penggunaan)
+
+---
+
+## 🚀 Tentang Proyek
+
+**OmniStaff AI** adalah platform pekerja virtual mandiri (*autonomous AI employees*) yang dirancang khusus untuk UMKM. Proyek ini memadukan model AI mutakhir dari Meta dengan dashboard kantor virtual 3D interaktif. Sistem ini bertindak sebagai staf layanan pelanggan (*Customer Service*), manajer inventaris, hingga analis keuangan yang siap bekerja 24/7 melalui perintah teks maupun suara.
+
+---
+
+## ✨ Fitur Utama
+
+* **3D Virtual Office Dashboard:** Antarmuka web interaktif di mana avatar staf AI merepresentasikan status kerja nyata.  
+* **AI Customer Service:** Bot cerdas yang menjawab pertanyaan pembeli seputar produk dan status pesanan secara otomatis.  
+* **Voice-Activated Commands:** Memungkinkan pemilik toko memberikan instruksi operasional langsung lewat suara (*Speech-to-Text*).  
+* **AI Image Generation:** Otomatis membuat poster atau aset promosi produk baru berdasarkan deskripsi teks.  
+* **Pencatatan Keuangan Kilat:** Rekapitulasi laporan penjualan dan laba-rugi otomatis setiap hari.
+
+---
+
+## 🏗 Arsitektur Sistem
+
 ┌────────────────────────────────────────────────────────┐
 
 │               Frontend (Browser / Localhost)           │
 
-│  - 3D Virtual Office (Three.js / Canvas)               │
+│  \- 3D Virtual Office (Three.js / Canvas)               │
 
-│  - Chat & Voice Interface                              │
+│  \- Chat & Voice Interface                              │
 
 └──────────────────────────┬─────────────────────────────┘
 
@@ -38,13 +50,13 @@ ________________________________________
 
 ┌──────────────────────────▼─────────────────────────────┐
 
-│               Backend (Node.js + Express)              │
+│               Backend (Node.js \+ Express)              │
 
-│  - RESTful API Controllers                             │
+│  \- RESTful API Controllers                             │
 
-│  - AI Orchestrator / Agent Execution Engine            │
+│  \- AI Orchestrator / Agent Execution Engine            │
 
-│  - Voice & Image Processing Handlers                   │
+│  \- Voice & Image Processing Handlers                   │
 
 └───────────┬───────────────────────────┬────────────────┘
 
@@ -54,294 +66,233 @@ ________________________________________
 
 │   Database (MySQL)      │   │   Meta AI Model Endpoints│
 
-│  - Customers, Products  │   │   - LLM Reasoning        │
+│  \- Customers, Products  │   │   \- LLM Reasoning        │
 
-│  - Orders, Reports      │   │   - Image/Voice APIs     │
+│  \- Orders, Reports      │   │   \- Image/Voice APIs     │
 
 └─────────────────────────┘   └──────────────────────────┘
 
-________________________________________
-6. Struktur Folder Lengkap
-Struktur direktori proyek yang terorganisir untuk pengembangan lokal:
+---
+
+## 📁 Struktur Folder Lengkap
+
+Berikut adalah struktur direktori lengkap proyek **OmniStaff AI**:
 
 ai-employee-umkm/
 
 ├── frontend/
 
-│   ├── dashboard/       # Tampilan antarmuka kantor virtual 3D
+│   ├── dashboard/
 
-│   ├── ai-chat/         # Komponen interaksi chat & suara
+│   │   ├── index.html       \# Halaman utama 3D Virtual Office
 
-│   └── assets/          # Gambar, model 3D, dan styling CSS
+│   │   ├── css/             \# Lembar gaya tampilan (style.css)
+
+│   │   └── js/              \# Logika interaksi 3D & render canvas
+
+│   ├── ai-chat/
+
+│   │   ├── chat.html        \# Antarmuka chat interaktif
+
+│   │   └── voice.js         \# Pengelola input mikrofon & audio
+
+│   └── assets/
+
+│       ├── models/          \# Aset model 3D / avatar
+
+│       └── promotions/      \# Hasil generate gambar produk
+
+│
 
 ├── backend/
 
-│   ├── controllers/     # Logika bisnis (products, orders, reports)
+│   ├── controllers/
 
-│   ├── routes/          # Definisi endpoint API Express
+│   │   ├── productController.js  \# Kontrol logika produk & stok
 
-│   ├── services/        # Integrasi service eksternal & database
+│   │   ├── orderController.js    \# Kontrol logika transaksi pesanan
 
-│   ├── middleware/      # Validasi auth dan error handler
+│   │   └── reportController.js   \# Kontrol laporan keuangan
 
-│   └── server.js        # Titik masuk utama aplikasi Express
+│   ├── routes/
+
+│   │   ├── apiRoutes.js          \# Definisi jalur RESTful API utama
+
+│   │   └── aiRoutes.js           \# Jalur komunikasi khusus AI Agent
+
+│   ├── services/
+
+│   │   ├── db.js                 \# Koneksi database MySQL
+
+│   │   └── metaAiService.js      \# Integrasi API Meta AI
+
+│   ├── middleware/
+
+│   │   ├── authMiddleware.js     \# Validasi sesi pengguna
+
+│   │   └── errorHandler.js       \# Penanganan error global
+
+│   └── server.js                 \# Titik masuk utama server Express
+
+│
 
 ├── ai/
 
-│   ├── agent/           # Logika AI Agent & System Prompts
+│   ├── agent/
 
-│   ├── tools/           # Function calling tools (cek stok, buat laporan)
+│   │   └── orchestrator.js       \# Pengatur alur kerja multi-agent
 
-│   ├── prompts/         # Template prompt untuk berbagai peran agen
+│   ├── tools/
 
-│   ├── voice/           # Pengolahan audio/voice workflow
+│   │   └── index.js              \# Kumpulan fungsi (checkStock, createOrder, dll)
 
-│   └── image/           # Handler pembuatan gambar produk
+│   ├── prompts/
+
+│   │   └── systemPrompts.js      \# Instruksi dasar karakter staf AI
+
+│   ├── voice/
+
+│   │   └── sttHandler.js         \# Penanganan Speech-to-Text
+
+│   └── image/
+
+│       └── imgGenerator.js       \# Handler pembuat gambar promosi
+
+│
 
 ├── modules/
 
-│   ├── customers/       # Logika manajemen data pelanggan
+│   ├── customers/
 
-│   ├── products/        # Logika katalog produk & inventaris
+│   │   └── customerModel.js      \# Logika data pelanggan
 
-│   ├── orders/          # Logika pemesanan dan transaksi
+│   ├── products/
 
-│   ├── employees/       # Logika status virtual employee
+│   │   └── productModel.js       \# Logika data inventaris produk
 
-│   └── reports/         # Logika rekap laporan keuangan
+│   ├── orders/
+
+│   │   └── orderModel.js         \# Logika data transaksi
+
+│   ├── employees/
+
+│   │   └── staffStatus.js        \# Status dan aktivitas staf virtual
+
+│   └── reports/
+
+│       └── reportModel.js        \# Perhitungan rekap laba-rugi
+
+│
 
 ├── database/
 
-│   ├── migrations/      # Skema pembuatan tabel database
+│   ├── migrations/
 
-│   └── seeds/           # Data dummy awal untuk testing
+│   │   └── schema.sql            \# Skema tabel MySQL lengkap
+
+│   └── seeds/
+
+│       └── dummyData.sql         \# Data awal produk & pelanggan
+
+│
 
 ├── docs/
 
-│   ├── architecture.md  # Dokumentasi arsitektur sistem
+│   ├── architecture.md           \# Dokumentasi arsitektur sistem
 
-│   ├── workflow.md      # Panduan alur kerja agen AI
+│   ├── workflow.md               \# Alur interaksi agen AI
 
-│   └── demo.md          # Skenario rekaman demo hackathon
+│   └── demo.md                   \# Panduan skenario video demo
 
-├── .env                 # Konfigurasi environment (DB credentials, API Keys)
+│
 
-├── package.json         # Dependensi proyek Node.js
+├── .env                          \# Konfigurasi environment rahasia
 
-└── README.md            # Dokumentasi utama proyek
+├── package.json                  \# Daftar dependensi modul Node.js
 
-________________________________________
-7. Database Schema (MySQL)
-Simpan skema ini di database/migrations/schema.sql:
+└── README.md                     \# Dokumentasi utama proyek
 
-CREATE DATABASE IF NOT EXISTS ai_employee_umkm;
+---
 
-USE ai_employee_umkm;
+## 💻 Prasyarat Sistem
 
--- Tabel Produk & Stok
+Pastikan perangkat Windows Anda sudah terinstal perangkat lunak berikut:
 
-CREATE TABLE products (
+1. **Laragon** (Sudah termasuk MySQL, Apache/Nginx, dan PHP).  
+2. **Node.js** (Versi LTS terbaru) beserta npm.  
+3. **Git** (Opsional untuk kloning repositori).
 
-    id INT AUTO_INCREMENT PRIMARY KEY,
+---
 
-    name VARCHAR(255) NOT NULL,
+## 🛠 Panduan Instalasi dengan Laragon (Lokal)
 
-    category VARCHAR(100),
+Ikuti langkah-langkah di bawah ini untuk mengatur dan menjalankan proyek menggunakan lingkungan **Laragon**:
 
-    price DECIMAL(10, 2) NOT NULL,
+### 1\. Letakkan Proyek di Folder Laragon
 
-    stock INT NOT NULL DEFAULT 0,
+* Buka folder instalasi Laragon Anda (biasanya di `C:\laragon\www\`).  
+* Buat folder baru dengan nama `ai-employee-umkm` dan letakkan seluruh file struktur di atas ke dalam folder tersebut.
 
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+### 2\. Konfigurasi Database MySQL via Laragon
 
-);
+1. Buka aplikasi **Laragon**, lalu klik tombol **Start All**.  
+2. Klik tombol **Database** untuk membuka aplikasi manajemen database (seperti HeidiSQL atau phpMyAdmin).  
+3. Buat database baru dengan nama:  
+     
+   CREATE DATABASE ai\_employee\_umkm;  
+     
+4. Impor skema tabel dari file `database/migrations/schema.sql` ke dalam database `ai_employee_umkm` yang baru saja dibuat.
 
--- Tabel Pelanggan
+### 3\. Instalasi Dependensi Backend
 
-CREATE TABLE customers (
+Buka terminal (Command Prompt, PowerShell, atau Terminal Laragon) dan arahkan ke direktori proyek Anda:
 
-    id INT AUTO_INCREMENT PRIMARY KEY,
+cd C:\\laragon\\www\\ai-employee-umkm
 
-    name VARCHAR(255) NOT NULL,
-
-    phone VARCHAR(50) UNIQUE,
-
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-
-);
-
--- Tabel Pesanan
-
-CREATE TABLE orders (
-
-    id INT AUTO_INCREMENT PRIMARY KEY,
-
-    customer_id INT,
-
-    total_amount DECIMAL(10, 2) NOT NULL,
-
-    status VARCHAR(50) DEFAULT 'Pending', -- Pending, Completed, Cancelled
-
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (customer_id) REFERENCES customers(id)
-
-);
-
--- Tabel Detail Pesanan
-
-CREATE TABLE order_items (
-
-    id INT AUTO_INCREMENT PRIMARY KEY,
-
-    order_id INT,
-
-    product_id INT,
-
-    quantity INT NOT NULL,
-
-    subtotal DECIMAL(10, 2) NOT NULL,
-
-    FOREIGN KEY (order_id) REFERENCES orders(id),
-
-    FOREIGN KEY (product_id) REFERENCES products(id)
-
-);
-
--- Tabel Aktivitas AI Employee
-
-CREATE TABLE ai_logs (
-
-    id INT AUTO_INCREMENT PRIMARY KEY,
-
-    agent_name VARCHAR(100),
-
-    action_type VARCHAR(100),
-
-    payload TEXT,
-
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-
-);
-
-________________________________________
-8. AI Agent + Tool/Function Calling
-Di direktori ai/tools/index.js, definisikan fungsi yang bisa dipanggil oleh Meta AI Agent:
-
-const db = require('../../backend/services/db');
-
-const aiTools = {
-
-    checkStock: async ({ productName }) => {
-
-        const [rows] = await db.query('SELECT name, stock, price FROM products WHERE name LIKE ?', [`%${productName}%`]);
-
-        return rows.length > 0 ? rows : `Produk ${productName} tidak ditemukan.`;
-
-    },
-
-    
-
-    createOrder: async ({ customerName, productName, quantity }) => {
-
-        // Logika pembuatan pesanan otomatis
-
-        return `Pesanan untuk ${customerName} sebanyak ${quantity} ${productName} berhasil dibuat.`;
-
-    },
-
-    getDailyReport: async () => {
-
-        const [rows] = await db.query('SELECT SUM(total_amount) as total_sales FROM orders WHERE DATE(created_at) = CURDATE()');
-
-        return `Total penjualan hari ini adalah Rp ${rows[0].total_sales || 0}`;
-
-    }
-
-};
-
-module.exports = aiTools;
-
-________________________________________
-9. Voice Workflow
-1.	Input Suara: Pengguna menekan tombol mikrofon di frontend dashboard.
-2.	Speech-to-Text (STT): Audio direkam di browser, dikirim ke backend, dan diterjemahkan menjadi teks perintah.
-3.	AI Processing: Meta AI menerima teks, mengidentifikasi niat (intent), lalu mengeksekusi tool yang sesuai (misalnya checkStock).
-4.	Text-to-Speech (TTS) / Response: Hasil eksekusi diubah kembali menjadi respons suara atau ditampilkan dalam bentuk teks di gelembung chat avatar 3D.
-
-________________________________________
-10. Image Generation
-1.	Pemicu: Pengguna meminta agen membuat poster promosi produk ("Buatkan poster diskon baju batik").
-2.	Eksekusi: Backend memanggil Meta Model API endpoint khusus pembuatan gambar (image generation).
-3.	Hasil: Gambar dikirim kembali ke frontend dan otomatis disimpan ke direktori frontend/dashboard/assets/promotions/ untuk langsung dibagikan ke media sosial UMKM.
-
-________________________________________
-11. Dashboard (3D Virtual Kantor)
-●	Visualisasi: Menggunakan canvas interaktif ringan (atau pustaka 3D seperti Three.js) untuk menampilkan tata letak kantor mini.
-●	Interaktivitas:
-●	Meja 1: Staf CS (Menangani chat masuk dari pelanggan).
-●	Meja 2: Staf Gudang (Menampilkan grafik stok menipis secara visual).
-●	Meja 3: Staf Keuangan (Menampilkan ringkasan kas masuk hari ini).
-●	Klik pada salah satu avatar akan membuka panel chat langsung dengan agen spesifik tersebut.
-
-________________________________________
-12. Skenario Demo (3–5 Menit)
-●	Menit 0:00 - 1:00 (Pembukaan & Masalah): Menjelaskan tantangan UMKM yang kesulitan merekrut staf operasional lengkap dan mengenalkan OmniStaff AI.
-●	Menit 1:00 - 2:30 (Live Demo - Voice & Chat): Pemilik toko menggunakan perintah suara untuk menanyakan stok barang dan mencatat pesanan baru secara real-time melalui kantor virtual 3D.
-●	Menit 2:30 - 3:45 (Automasi AI): Mendemonstrasikan pembuatan gambar promosi produk baru menggunakan Meta AI dan rekap laporan keuangan otomatis.
-●	Minut 3:45 - 4:00 (Penutup): Ringkasan dampak efisiensi bagi UMKM dan potensi skalabilitas global.
-
-________________________________________
-13. Roadmap 10 Hari (Hackathon Schedule)
-●	Hari 1: Inisialisasi repositori, perancangan database MySQL, dan struktur folder dasar Express.
-●	Hari 2: Pembuatan koneksi database dan implementasi REST API CRUD dasar (Produk & Pesanan).
-●	Hari 3: Integrasi awal API Meta AI dan penyusunan system prompts untuk agen virtual.
-●	Hari 4: Pengembangan Function Calling / Tools backend (Cek stok, buat pesanan, rekap laporan).
-●	Hari 5: Membangun kerangka frontend dashboard kantor virtual sederhana.
-●	Hari 6: Implementasi fitur interaksi chat teks di antarmuka web.
-●	Hari 7: Integrasi Voice Workflow (Audio capture & Speech processing).
-●	Hari 8: Integrasi fitur Image Generation untuk kebutuhan promosi produk.
-●	Hari 9: Pengujian menyeluruh (End-to-End Testing) di lingkungan Windows Localhost dan perbaikan bug.
-●	Hari 10: Perekaman video demo (3–5 menit), penyusunan dokumentasi README.md, dan finalisasi submission.
-
-________________________________________
-14. Checklist Submission
-	Repositori GitHub publik dengan struktur folder rapi.
-	Skema database SQL dan panduan instalasi lokal di README.md.
-	Bukti integrasi Meta AI Model API aktif di backend.
-	Dokumentasi arsitektur (docs/architecture.md) dan alur kerja (docs/workflow.md).
-	Tautan video demo berdurasi 3–5 menit yang memperlihatkan fitur utama.
-
-________________________________________
-15. Rancangan Prototype di Windows Localhost
-Ikuti langkah ringkas ini untuk menjalankan prototipe di komputer lokal Anda:
-
-1.	Prasyarat Sistem: Pastikan Node.js, npm, dan XAMPP (untuk MySQL lokal) sudah terpasang di Windows.
-2.	Inisialisasi Database: Buka phpMyAdmin, buat database baru bernama ai_employee_umkm, lalu impor skema dari bagian nomor 7.
-3.	Setup Backend:
-
-cd backend
-
-npm init -y
+Lalu instal dependensi yang dibutuhkan menggunakan npm:
 
 npm install express mysql2 dotenv cors body-parser
 
-4.	Konfigurasi .env: Buat file .env di root folder:
+---
+
+## ⚙️ Konfigurasi Environment (`.env`)
+
+Buat file bernama `.env` di root direktori proyek (`ai-employee-umkm/.env`) dan sesuaikan konfigurasi koneksi database lokal Laragon Anda:
 
 PORT=3000
 
-DB_HOST=localhost
+DB\_HOST=127.0.0.1
 
-DB_USER=root
+DB\_USER=root
 
-DB_PASS=
+DB\_PASS=
 
-DB_NAME=ai_employee_umkm
+DB\_NAME=ai\_employee\_umkm
 
-META_API_KEY=your_meta_ai_api_key_here
+META\_API\_KEY=masukkan\_meta\_ai\_api\_key\_anda\_di\_sini
 
-5.	Menjalankan Server:
+*(Catatan: Secara default, Laragon menggunakan user `root` tanpa password).*
+
+---
+
+## ▶️ Menjalankan Aplikasi
+
+Setelah semua instalasi dan konfigurasi selesai, jalankan server backend Node.js melalui terminal:
 
 node backend/server.js
 
-6.	Akses Dashboard: Buka browser dan arahkan ke http://localhost:3000 untuk mulai menguji interaksi kantor virtual AI.
+Atau jika Anda memasang `nodemon`:
+
+npm run dev
+
+Buka browser Anda dan akses tautan berikut untuk melihat dashboard kantor virtual 3D:
+
+http://localhost:3000
+
+---
+
+## 📖 Dokumentasi & Penggunaan
+
+* **Arsitektur Sistem:** Lihat detail penjelasan modul di `docs/architecture.md`.  
+* **Alur Kerja Agen AI:** Panduan perintah *function calling* dapat dibaca pada `docs/workflow.md`.  
+* **Skenario Demo:** Panduan rekaman video untuk keperluan *submission hackathon* tersedia di `docs/demo.md`.
